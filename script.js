@@ -74,11 +74,12 @@ function crypt() {
 function decrypt() {
     let mensaje = document.getElementById("textoIngresado").value;
 
+    let procesado = document.querySelector("#textoProcesado");
+    procesado.style.backgroundImage = "none"
+
     let textOriginal = mensaje.split('');
     let textFinal = [];
     let u = 0;
-
-    if (!validarTexto()) {
 
         for (let i = 0; i < textOriginal.length;) {
             element = textOriginal[i];
@@ -135,8 +136,6 @@ function decrypt() {
                     i++;
                     break;
             }
-
-        }
 
         final = textFinal.join('');
 
