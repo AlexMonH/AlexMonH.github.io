@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>¡Encripta y Desencripta tu texto!</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="/src/logo.png" alt="Logo de Alura" >
+    </header>
+    <main>
+        <section>
+            <textarea id="textoIngresado" cols="30" rows="10" placeholder="Ingrese el texto a Encriptar/Desencriptar"></textarea>
+            <div>
+                <h6 class="advertencia">Solo se admiten letras minúsculas, sin acentos ni caracteres especiales.</h6>
+            </div>
+            <div class="botones">
+                <button id="botonEncriptar" onclick="crypt()">Encriptar</button>
+                <button id="botonDesencriptar" onclick="decrypt()">Desencriptar</button>
+            </div>
+        </section>
+        <section>
+            <textarea id="textoProcesado" cols="20" rows="10" readonly></textarea>
+            <button id="botonCopiar" onclick="copiar()">Copiar</button>
+        </section>
+    </main>
+<script src="/script.js"></script>
+
+<footer>
+    <p class="copyright">© Alejandro Montalvo Hernández</p>
+</footer>
+
+</body>
+</html>
