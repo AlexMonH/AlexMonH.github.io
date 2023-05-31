@@ -6,7 +6,7 @@ function validarTexto() {
         alert("Solo son permitidas letras minúsculas y sin acentos")
         location.reload();
         return true;
-        
+
     }
 
 }
@@ -78,68 +78,71 @@ function decrypt() {
     let textFinal = [];
     let u = 0;
 
+    if (!validarTexto()) {
 
-    for (let i = 0; i < textOriginal.length;) {
-        element = textOriginal[i];
+        for (let i = 0; i < textOriginal.length;) {
+            element = textOriginal[i];
 
-        switch (element) {
-            case "a":
-                textFinal[u] = "a";
-                if (textOriginal[i + 1] == "i") {
+            switch (element) {
+                case "a":
+                    textFinal[u] = "a";
+                    if (textOriginal[i + 1] == "i") {
+                        i++;
+                    }
+                    u++;
                     i++;
-                }
-                u++;
-                i++;
-                break;
+                    break;
 
-            case "e":
-                textFinal[u] = "e";
-                if (textOriginal[i + 1] == "n" && textOriginal[i + 2] == "t" && textOriginal[i + 3] == "e" && textOriginal[i + 4] == "r") {
-                    i = i + 4;
-                }
-                u++;
-                i++;
-                break;
+                case "e":
+                    textFinal[u] = "e";
+                    if (textOriginal[i + 1] == "n" && textOriginal[i + 2] == "t" && textOriginal[i + 3] == "e" && textOriginal[i + 4] == "r") {
+                        i = i + 4;
+                    }
+                    u++;
+                    i++;
+                    break;
 
-            case "i":
-                textFinal[u] = "i";
-                if (textOriginal[i + 1] == "m" && textOriginal[i + 2] == "e" && textOriginal[i + 3] == "s") {
-                    i = i + 3;
-                }
-                u++;
-                i++;
-                break;
+                case "i":
+                    textFinal[u] = "i";
+                    if (textOriginal[i + 1] == "m" && textOriginal[i + 2] == "e" && textOriginal[i + 3] == "s") {
+                        i = i + 3;
+                    }
+                    u++;
+                    i++;
+                    break;
 
-            case "o":
-                textFinal[u] = "o";
-                if (textOriginal[i + 1] == "b" && textOriginal[i + 2] == "e" && textOriginal[i + 3] == "r") {
-                    i = i + 3;
-                }
-                u++;
-                i++;
-                break;
+                case "o":
+                    textFinal[u] = "o";
+                    if (textOriginal[i + 1] == "b" && textOriginal[i + 2] == "e" && textOriginal[i + 3] == "r") {
+                        i = i + 3;
+                    }
+                    u++;
+                    i++;
+                    break;
 
-            case "u":
-                textFinal[u] = "u";
-                if (textOriginal[i + 1] == "f" && textOriginal[i + 2] == "a" && textOriginal[i + 3] == "t") {
-                    i = i + 3;
-                }
-                u++;
-                i++;
-                break;
+                case "u":
+                    textFinal[u] = "u";
+                    if (textOriginal[i + 1] == "f" && textOriginal[i + 2] == "a" && textOriginal[i + 3] == "t") {
+                        i = i + 3;
+                    }
+                    u++;
+                    i++;
+                    break;
 
-            default:
-                textFinal[u] = element;
-                u++
-                i++;
-                break;
+                default:
+                    textFinal[u] = element;
+                    u++
+                    i++;
+                    break;
+            }
+
         }
 
+        final = textFinal.join('');
+
+        document.getElementById("textoProcesado").innerHTML = final;
+
     }
-
-    final = textFinal.join('');
-
-    document.getElementById("textoProcesado").innerHTML = final;
 
 }
 
